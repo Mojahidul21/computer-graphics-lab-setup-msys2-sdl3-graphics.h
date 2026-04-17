@@ -1,0 +1,1 @@
+# computer-graphics-lab-setup-msys2-sdl3-graphics.h
