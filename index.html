@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Computer Graphics and Multimedia System Lab • MSYS2 + SDL3 + graphics.h for Windows Environment Setup</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Outfit',sans-serif;
+  background: linear-gradient(135deg,#eef2ff,#f8fafc);
+  color:#111827;
+  font-size:18px;
+}
+
+.wrap{
+  max-width:1050px;
+  margin:auto;
+  padding:30px;
+}
+
+/* HEADER */
+.header{
+  background: linear-gradient(135deg,#4f46e5,#2563eb);
+  color:white;
+  padding:26px;
+  border-radius:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+}
+
+.header h1{ font-size:26px; }
+
+.btn{
+  background:white;
+  color:#2563eb;
+  border:none;
+  padding:10px 16px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section{
+  margin-top:16px;
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,0.10);
+}
+
+.section-header{
+  padding:18px;
+  font-weight:700;
+  font-size:18px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  background:#f3f4f6;
+}
+
+.section-body{
+  display:none;
+  padding:20px;
+  line-height:1.8;
+  font-size:17px;
+  border-top:1px solid #e5e7eb;
+}
+
+/* CODE */
+.code{
+  font-family:'JetBrains Mono',monospace;
+  background:#0f172a;
+  color:#e2e8f0;
+  padding:12px;
+  border-radius:12px;
+  margin-top:10px;
+  font-size:15px;
+  overflow-x:auto;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  margin-top:10px;
+  border-collapse:collapse;
+  font-size:16px;
+}
+
+td{
+  border:1px solid #e5e7eb;
+  padding:10px;
+}
+
+/* NOTE */
+.note{
+  background:#ecfeff;
+  border-left:5px solid #06b6d4;
+  padding:12px;
+  margin-top:10px;
+  border-radius:10px;
+}
+
+/* ARROW */
+.arrow{ transition:0.3s; }
+.arrow.open{ transform:rotate(90deg); }
+
+/* FOOTER */
+footer{
+  text-align:center;
+  margin-top:35px;
+  font-size:15px;
+  color:#6b7280;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Computer Graphics and Multimedia System Lab <br> MSYS2 + SDL3 + graphics.h for Windows Environment Setup</h1>
+  <button class="btn" onclick="toggleAll()">Expand / Collapse</button>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+1. Why This Setup? <span class="arrow">▶</span>
+</div>
+<div class="section-body">
+
+<p><b>We use modern tools instead of Turbo C/C++</b></p>
+
+<ul>
+<li>Better performance</li>
+<li>Future-ready development</li>
+<li>No system downgrade required</li>
+</ul>
+
+<div class="note">
+<b>Mindset:</b> Do not go backward. Always upgrade your system.
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+2. Required Tools (Overview) <span class="arrow">▶</span>
+</div>
+
+<div class="section-body">
+
+<p><b>MSYS2</b> → Linux-like development environment for Windows</p>
+<p><b>MSYS2 UCRT64</b> → Terminal where all commands are executed</p>
+<p><b>SDL3</b> → Graphics rendering engine</p>
+<p><b>SDL3_bgi</b> → Enables graphics.h support</p>
+<p><b>graphics.h</b> → Used in C graphics programs</p>
+<p><b>GCC / Clang</b> → Compilers</p>
+<p><b>SDL3_bgi.dll</b> → Required runtime file for execution</p>
+
+<div class="note">
+<b>Important:</b> Always use <b>MSYS2 UCRT64</b> shell.
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+3. Setup Steps (Run Once Only) <span class="arrow">▶</span>
+</div>
+
+<div class="section-body">
+
+<div class="note">
+✔ This section is ONLY for installation/setup  
+✔ After this, you never repeat these steps
+</div>
+
+<p><b>Step 3.0: Download & Install MSYS2</b></p>
+<p>From official MSYS2 website.</p>
+
+<p><b>Step 3.1: Open MSYS2 UCRT64 Shell</b></p>
+<p>Search in Windows:</p>
+<div class="code">MSYS2 UCRT64</div>
+
+<p><b>Step 3.2: Update system</b></p>
+<div class="code">pacman -Syu</div>
+
+<table>
+<tr><td>pacman</td><td>MSYS2 package manager</td></tr>
+<tr><td>-Syu</td><td>Update system + packages</td></tr>
+</table>
+
+<p><b>Step 3.3: Install SDL3</b></p>
+<div class="code">pacman -S make mingw-w64-ucrt-x86_64-sdl3</div>
+
+<p><b>Step 3.4: Install Clang</b></p>
+<div class="code">pacman -S mingw-w64-ucrt-x86_64-clang</div>
+
+<p><b>Step 3.5: Download SDL3_bgi (ZIP)</b></p>
+<p>Extract it anywhere (Desktop / Downloads)</p>
+
+<div class="note">
+<b>Important Note:</b><br>
+If you see <code>/your-folder/</code> → replace it with your actual extracted path  
+Example: <code>/c/Users/YourName/Downloads/SDL3_bgi</code>
+</div>
+
+<p><b>Step 3.6: Copy files</b></p>
+<div class="code">
+cp /your-folder/graphics.h /ucrt64/include/<br>
+cp /your-folder/SDL3_bgi.h /ucrt64/include/SDL3/<br>
+cp /your-folder/SDL3_bgi.dll /ucrt64/bin/
+</div>
+
+<table>
+<tr><td>cp</td><td>Copy command</td></tr>
+<tr><td>/ucrt64/include</td><td>Header files location</td></tr>
+<tr><td>/ucrt64/bin</td><td>DLL runtime location</td></tr>
+</table>
+
+<p><b>Step 3.7: Compile library</b></p>
+<div class="code">clang -c SDL3_bgi.c -o SDL3_bgi.o</div>
+
+<table>
+<tr><td>clang</td><td>Compiler</td></tr>
+<tr><td>-c</td><td>Compile only (no exe)</td></tr>
+<tr><td>.c</td><td>Source file</td></tr>
+<tr><td>.o</td><td>Object file</td></tr>
+</table>
+
+<p><b>Step 3.8: Create library</b></p>
+<div class="code">ar rcs libSDL3_bgi.a SDL3_bgi.o</div>
+
+<table>
+<tr><td>ar</td><td>Archive tool</td></tr>
+<tr><td>rcs</td><td>Create static library</td></tr>
+</table>
+
+<p><b>Step 3.9: Copy library</b></p>
+<div class="code">cp libSDL3_bgi.a /ucrt64/lib/</div>
+
+</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+4. Compile & Run (Run Each Time) <span class="arrow">▶</span>
+</div>
+
+<div class="section-body">
+
+<div class="note">
+✔ Compile & Run = Every time you write code<br>
+✔ Setup = Only once
+</div>
+
+<p><b>Step 4.1: Go to project folder</b></p>
+<div class="code">cd /e/PersonalFolder/lab01</div>
+
+<table>
+<tr><td>cd</td><td>Change directory (move into folder)</td></tr>
+<tr><td>/e/...</td><td>Your drive path in MSYS2</td></tr>
+</table>
+
+<p><b>Step 4.2: Compile program</b></p>
+<div class="code">gcc main.c -o line.exe -lSDL3_bgi -lSDL3 -lm</div>
+
+<table>
+<tr><td>gcc</td><td>Compiler</td></tr>
+<tr><td>main.c</td><td>Source code file</td></tr>
+<tr><td>-o line.exe</td><td>Output executable name</td></tr>
+<tr><td>-lSDL3_bgi</td><td>Graphics library</td></tr>
+<tr><td>-lSDL3</td><td>SDL3 engine</td></tr>
+<tr><td>-lm</td><td>Math library</td></tr>
+</table>
+
+<p><b>Step 4.3: Run program</b></p>
+<div class="code">./line.exe</div>
+
+<div class="note">
+<b>Rule:</b> You compile every time after changing code, then run.
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+5. Common Errors <span class="arrow">▶</span>
+</div>
+
+<div class="section-body">
+
+<ul>
+<li><b>graphics.h not found</b> → Wrong copy path</li>
+<li><b>SDL3 not found</b> → Missing installation</li>
+<li><b>undefined reference</b> → Library not linked</li>
+</ul>
+
+</div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+<div class="section-header" onclick="toggle(this)">
+6. Checklist <span class="arrow">▶</span>
+</div>
+
+<div class="section-body">
+
+<ul>
+<li>✔ MSYS2 installed</li>
+<li>✔ SDL3 installed</li>
+<li>✔ Clang installed</li>
+<li>✔ Files copied correctly</li>
+<li>✔ Library built</li>
+<li>✔ Program runs</li>
+</ul>
+
+</div>
+</div>
+
+<footer>
+Prepared by <b>Mojahidul Alam</b> • Dedicated to <b>Fahim-Al-Jubaer</b>
+</footer>
+
+</div>
+
+<script>
+function toggle(el){
+  const body = el.nextElementSibling;
+  const arrow = el.querySelector(".arrow");
+  body.style.display = body.style.display==="block"?"none":"block";
+  arrow.classList.toggle("open");
+}
+
+let all=false;
+function toggleAll(){
+  all=!all;
+  document.querySelectorAll(".section-body").forEach(b=>{
+    b.style.display=all?"block":"none";
+  });
+  document.querySelectorAll(".arrow").forEach(a=>{
+    a.classList.toggle("open",all);
+  });
+}
+</script>
+
+</body>
+</html>
