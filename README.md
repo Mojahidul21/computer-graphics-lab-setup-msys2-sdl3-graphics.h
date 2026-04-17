@@ -1,4 +1,4 @@
-# Computer Graphics Lab Setup (MSYS2 + SDL3 + graphics.h)
+# Computer Graphics and Multimedia System Lab Setup (MSYS2 + SDL3 + graphics.h)
 
 This project provides a complete setup guide for configuring a modern C graphics environment on Windows using MSYS2, SDL3, and graphics.h.
 
