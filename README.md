@@ -9,7 +9,7 @@ This project provides a complete setup guide for configuring a modern C graphics
 - Lab-ready instructions
 
 ## How to use
-Open `index.html` in any browser.
+Download `index.html` and onen in any browser.
 
 ## Requirements
 - Windows 10/11
