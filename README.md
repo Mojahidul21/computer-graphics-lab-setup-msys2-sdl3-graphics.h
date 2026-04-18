@@ -9,7 +9,7 @@ This project provides a complete setup guide for configuring a modern C graphics
 - Lab-ready instructions
 
 ## How to use
-Visit this page directly: https://mojahidul21.github.io/computer-graphics-lab-setup-msys2-sdl3-graphics.h/
+Visit: https://mojahidul21.github.io/computer-graphics-lab-setup-msys2-sdl3-graphics.h/
 
 ## Requirements
 - Windows 10/11
