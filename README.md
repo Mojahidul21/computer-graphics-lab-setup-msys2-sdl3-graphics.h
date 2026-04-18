@@ -1,5 +1,7 @@
 # Computer Graphics and Multimedia System Lab Setup (MSYS2 + SDL3 + graphics.h)
 
+Modern compilers (64-bit) are incompatible with Turbo C (16-bit DOS-based). As a result, old graphics programs cannot run or compile. We must either use outdated tools or upgrade to a modern development environment.  
+
 This project provides a complete setup guide for configuring a modern C graphics environment on Windows using MSYS2, SDL3, and graphics.h.
 
 ## Features
