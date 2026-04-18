@@ -142,7 +142,9 @@ footer{
 </div>
 <div class="section-body">
 
-<p><b>We use modern tools instead of Turbo C/C++</b></p>
+<p style="text-align: justify;">Modern compilers (64-bit) are incompatible with Turbo C (16-bit DOS-based). As a result, old graphics programs cannot run or compile. We must either use outdated tools or upgrade to a modern development environment.</p>
+
+<p><b>Why we use modern tools instead of Turbo C</b></p>
 
 <ul>
 <li>Better performance</li>
@@ -215,7 +217,7 @@ footer{
 <div class="code">pacman -S mingw-w64-ucrt-x86_64-clang</div>
 
 <p><b>Step 3.5: Download SDL3_bgi (ZIP)</b></p>
-<p>Extract it anywhere (Desktop / Downloads)</p>
+<p>From official website. Extract it anywhere (Desktop / Downloads)</p>
 
 <div class="note">
 <b>Important Note:</b><br>
@@ -236,7 +238,14 @@ cp /your-folder/SDL3_bgi.dll /ucrt64/bin/
 <tr><td>/ucrt64/bin</td><td>DLL runtime location</td></tr>
 </table>
 
-<p><b>Step 3.7: Compile library</b></p>
+<p><b>Step 3.7: Go to SDL3_bgi folder</b></p>
+<div class="code">cd /your-folder/SDL3_bgi</div>
+
+<table>
+<tr><td>cd</td><td>Change directory (move into folder)</td></tr>
+</table>
+
+<p><b>Step 3.8: Compile library</b></p>
 <div class="code">clang -c SDL3_bgi.c -o SDL3_bgi.o</div>
 
 <table>
@@ -246,7 +255,7 @@ cp /your-folder/SDL3_bgi.dll /ucrt64/bin/
 <tr><td>.o</td><td>Object file</td></tr>
 </table>
 
-<p><b>Step 3.8: Create library</b></p>
+<p><b>Step 3.9: Create library</b></p>
 <div class="code">ar rcs libSDL3_bgi.a SDL3_bgi.o</div>
 
 <table>
@@ -254,7 +263,7 @@ cp /your-folder/SDL3_bgi.dll /ucrt64/bin/
 <tr><td>rcs</td><td>Create static library</td></tr>
 </table>
 
-<p><b>Step 3.9: Copy library</b></p>
+<p><b>Step 3.10: Copy library</b></p>
 <div class="code">cp libSDL3_bgi.a /ucrt64/lib/</div>
 
 </div>
